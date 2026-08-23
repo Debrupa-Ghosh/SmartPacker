@@ -24,13 +24,15 @@ function App() {
 
   const resultsRef = useRef(null);
 
-  const handleSearch = async () => {
-    const trimmed = destination.trim();
+  const handleSearch = async (targetDest) => {
+    const query = typeof targetDest === 'string' ? targetDest : destination;
+    const trimmed = query.trim();
     if (!trimmed) {
       setError('Please enter a destination.');
       return;
     }
 
+    setDestination(trimmed);
     setError('');
     setLoading(true);
     setWeather(null);
@@ -50,6 +52,8 @@ function App() {
     } catch (err) {
       if (err.message === 'LOCATION_NOT_FOUND') {
         setError("Couldn't find that destination. Try another city or location.");
+      } else if (err.message === 'INVALID_API_KEY' || err.message === 'MISSING_API_KEY') {
+        setError("WeatherAPI Key is missing or invalid. Please check your .env configuration.");
       } else {
         setError("We couldn't load the weather right now. Please try again.");
       }
@@ -65,7 +69,7 @@ function App() {
       <Navbar />
 
       <main className="flex-1">
-        <Hero>
+        <Hero onSelectDestination={handleSearch} destWeather={weather}>
           <SearchBar
             destination={destination}
             setDestination={setDestination}
