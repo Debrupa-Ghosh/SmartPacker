@@ -75,7 +75,7 @@ export default function TripMap({ localCoords, destCoords, localName, destName }
       doubleClickZoom: false,
     }).setView([20, 0], 2);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?api_key=cb1_3vji_1_de7b7266695c2863296a2a9f', {
       maxZoom: 18,
     }).addTo(map);
 
@@ -186,7 +186,7 @@ export default function TripMap({ localCoords, destCoords, localName, destName }
     <div className="relative w-full rounded-2xl overflow-hidden border border-slate-200/80 shadow-inner bg-slate-100" style={{ height: '200px' }}>
       <div ref={mapContainerRef} className="w-full h-full" />
       {/* Map Legend */}
-      <div className="absolute bottom-1.5 left-1.5 z-[1000] flex items-center gap-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-xl shadow-sm border border-slate-100" style={{ fontSize: '9px' }}>
+      <div className="absolute bottom-1.5 left-1.5 z-1000 flex items-center gap-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-xl shadow-sm border border-slate-100" style={{ fontSize: '9px' }}>
         <span className="flex items-center gap-1">
           <span className="w-2 h-2 rounded-full bg-red-500 inline-block"></span>
           <span className="text-slate-500 font-semibold">You</span>
