@@ -75,7 +75,7 @@ export default function TripMap({ localCoords, destCoords, localName, destName }
       doubleClickZoom: false,
     }).setView([20, 0], 2);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?api_key=cb1_3vji_1_de7b7266695c2863296a2a9f', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_3vji_1_de7b7266695c2863296a2a9f', {
       maxZoom: 18,
     }).addTo(map);
 
