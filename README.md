@@ -15,7 +15,7 @@ SmartPacker is a weather-based travel packing advisor. Traditional weather apps 
 
 ## Tech Stack
 
-- **Frontend:** React 19, Vite
+- **Frontend:** HTML,Javascript
 - **Styling:** Tailwind CSS v4
 - **Icons:** Lucide React
 - **API:** WeatherAPI.com
